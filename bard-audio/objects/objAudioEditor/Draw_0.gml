@@ -94,6 +94,7 @@ if editing!=-1{
             b=room_height-8;
         draw_rectangle(l,t,r,b,false);
         var cont = container_contents(editing),cn = array_length(cont),stopdrop = false;
+        var cont_srlzd = container_get_contents_serialize(editing),cn = array_length(cont),stopdrop = false;
         var locked = (editing.from_project);
         for(var i=0;i<cn;i+=1){
             var c = cont[i],name;
@@ -110,6 +111,7 @@ if editing!=-1{
                 {
                     if mouse_check_button_pressed(mb_left) and keyboard_check(vk_delete) and !locked{
                         array_delete(cont,i,1);
+                        array_delete(cont_srlzd, i, 1);
                         aeResetBlendMap(editing);
                         //aeCountReferences();
                         //save_audioedit();
