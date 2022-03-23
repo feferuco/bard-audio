@@ -1,4 +1,10 @@
 /// @description structs
+if !debug_mode {
+    show_message("Aborting Bard, it must be run in debug mode");
+    instance_destroy();
+    game_end();
+    exit;
+}
 search_freq = 2;
 search_update = 0;
 search_t = undefined;
