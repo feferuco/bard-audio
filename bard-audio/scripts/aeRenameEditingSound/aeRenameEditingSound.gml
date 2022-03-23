@@ -53,6 +53,7 @@ function aeRenameEditingSound() {
 				}else{
 					show_message("This new name is already in use by another container!");
 				}
+				aeBrowserUpdate()
 	        }
 	    }
 	}else{
