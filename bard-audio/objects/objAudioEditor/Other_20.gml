@@ -84,7 +84,10 @@ repeat(resource_n){
 					break;	
 				}
 			}
-			array_insert(parent_data.contents_serialize,_j,"$"+_name);
+			
+			if array_find_index(parent_data.contents_serialize, "$"+_name) == -1 {
+			    array_insert(parent_data.contents_serialize,_j,"$"+_name);
+			}
 		}else{
 			show_debug_message(concat("WARNING! couldn't find matching container for folder ",parent," containing asset ",resource_data.name));	
 		}
